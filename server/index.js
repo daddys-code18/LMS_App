@@ -1,6 +1,10 @@
 import express from "express";
 import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
 import connectDB from "./database/db.js";
+import userRoute from "./routes/user.route.js";
+import cors from "cors";
+
 dotenv.config({});
 
 const app = express();
@@ -18,7 +22,6 @@ app.use(
   })
 );
 
- 
 // apis
 // app.use("/api/v1/media", mediaRoute);
 app.use("/api/v1/user", userRoute);

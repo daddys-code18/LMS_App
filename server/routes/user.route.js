@@ -7,7 +7,7 @@ import {
   updateProfile,
 } from "../controllers/user.controller.js";
 import isAuthenticated from "../middlewares/isAuthenticated.js";
-import upload from "../utils/multer.js";
+import upload from "../utlis/multer.js";
 
 const router = express.Router();
 
