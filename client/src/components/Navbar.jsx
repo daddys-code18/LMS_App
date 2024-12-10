@@ -81,7 +81,7 @@ const Navbar = () => {
                             <Button onClick={() => navigate("/login")}>Signup</Button>
                         </div>
                     )}
-
+                    <DarkMode />
                 </div>
             </div>
             <div className="flex md:hidden items-center justify-between px-4 h-full">
