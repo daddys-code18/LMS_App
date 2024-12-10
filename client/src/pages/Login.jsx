@@ -1,4 +1,5 @@
-// import { Button } from "@/components/ui/button"
+
+// import { Button } from "@/components/ui/button";
 // import {
 //     Card,
 //     CardContent,
@@ -6,21 +7,18 @@
 //     CardFooter,
 //     CardHeader,
 //     CardTitle,
-// } from "@/components/ui/card"
-// import { Input } from "@/components/ui/input"
-// import { Label } from "@/components/ui/label"
+// } from "@/components/ui/card";
+// import { Input } from "@/components/ui/input";
+// import { Label } from "@/components/ui/label";
+// import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 // import {
-//     Tabs,
-//     TabsContent,
-//     TabsList,
-//     TabsTrigger,
-// } from "@/components/ui/tabs"
-// import { useLoginUserMutation, useRegisterUserMutation } from "@/features/api/authApi"
-// import { Loader2 } from "lucide-react"
-// import { useEffect, useState } from "react"
+//     useLoginUserMutation,
+//     useRegisterUserMutation,
+// } from "@/features/api/authApi";
+// import { Loader2 } from "lucide-react";
+// import { useEffect, useState } from "react";
 // import { useNavigate } from "react-router-dom";
 // import { toast } from "sonner";
-
 
 // const Login = () => {
 //     const [signupInput, setSignupInput] = useState({
@@ -28,11 +26,7 @@
 //         email: "",
 //         password: "",
 //     });
-//     const [loginInput, setLoginInput] = useState({
-//         email: "",
-//         password: "",
-//     });
-//     const navigate = useNavigate();
+//     const [loginInput, setLoginInput] = useState({ email: "", password: "" });
 
 //     const [
 //         registerUser,
@@ -52,22 +46,22 @@
 //             isSuccess: loginIsSuccess,
 //         },
 //     ] = useLoginUserMutation();
-
+//     const navigate = useNavigate();
 
 //     const changeInputHandler = (e, type) => {
 //         const { name, value } = e.target;
 //         if (type === "signup") {
-//             setSignupInput({ ...signupInput, [name]: value })
+//             setSignupInput({ ...signupInput, [name]: value });
 //         } else {
-//             setLoginInput({ ...loginInput, [name]: value })
+//             setLoginInput({ ...loginInput, [name]: value });
 //         }
 //     };
 
 //     const handleRegistration = async (type) => {
-//         const inputData = type === "signup" ? signupInput : loginInput
+//         const inputData = type === "signup" ? signupInput : loginInput;
 //         const action = type === "signup" ? registerUser : loginUser;
 //         await action(inputData);
-//     }
+//     };
 
 //     useEffect(() => {
 //         if (registerIsSuccess && registerData) {
@@ -91,10 +85,10 @@
 //         loginError,
 //         registerError,
 //     ]);
-//     return (
 
+//     return (
 //         <div className="flex items-center w-full justify-center mt-20">
-//             <Tabs defaultValue="account" className="w-[400px]">
+//             <Tabs defaultValue="login" className="w-[400px]">
 //                 <TabsList className="grid w-full grid-cols-2">
 //                     <TabsTrigger value="signup">Signup</TabsTrigger>
 //                     <TabsTrigger value="login">Login</TabsTrigger>
@@ -104,7 +98,8 @@
 //                         <CardHeader>
 //                             <CardTitle>Signup</CardTitle>
 //                             <CardDescription>
-//                                 Create a new account and click signup when you're done.                        </CardDescription>
+//                                 Create a new account and click signup when you're done.
+//                             </CardDescription>
 //                         </CardHeader>
 //                         <CardContent className="space-y-2">
 //                             <div className="space-y-1">
@@ -114,7 +109,7 @@
 //                                     name="name"
 //                                     value={signupInput.name}
 //                                     onChange={(e) => changeInputHandler(e, "signup")}
-//                                     placeholder="Eg. pavan"
+//                                     placeholder="Eg. patel"
 //                                     required="true"
 //                                 />
 //                             </div>
@@ -125,9 +120,10 @@
 //                                     name="email"
 //                                     value={signupInput.email}
 //                                     onChange={(e) => changeInputHandler(e, "signup")}
-//                                     placeholder="Eg. pavan@gmail.com"
+//                                     placeholder="Eg. patel@gmail.com"
 //                                     required="true"
-//                                 />                        </div>
+//                                 />
+//                             </div>
 //                             <div className="space-y-1">
 //                                 <Label htmlFor="username">Password</Label>
 //                                 <Input
@@ -139,7 +135,6 @@
 //                                     required="true"
 //                                 />
 //                             </div>
-
 //                         </CardContent>
 //                         <CardFooter>
 //                             <Button
@@ -163,7 +158,8 @@
 //                         <CardHeader>
 //                             <CardTitle>Login</CardTitle>
 //                             <CardDescription>
-//                                 Login your password here. After signup, you'll be logged in.                        </CardDescription>
+//                                 Login your password here. After signup, you'll be logged in.
+//                             </CardDescription>
 //                         </CardHeader>
 //                         <CardContent className="space-y-2">
 //                             <div className="space-y-1">
@@ -173,7 +169,7 @@
 //                                     name="email"
 //                                     value={loginInput.email}
 //                                     onChange={(e) => changeInputHandler(e, "login")}
-//                                     placeholder="Eg. pavan@gmail.com"
+//                                     placeholder="Eg. patel@gmail.com"
 //                                     required="true"
 //                                 />
 //                             </div>
@@ -208,10 +204,9 @@
 //                 </TabsContent>
 //             </Tabs>
 //         </div>
-//     )
-// }
-
-// export default Login
+//     );
+// };
+// export default Login;
 // McgPr7oX7v1mMcbN
 import { Button } from "@/components/ui/button";
 import {
@@ -279,10 +274,10 @@ const Login = () => {
 
     useEffect(() => {
         if (registerIsSuccess && registerData) {
-            toast.success(registerData.message || "Signup successful.")
+            toast.success(registerData?.message || "Signup successful.")
         }
         if (registerError) {
-            toast.error(registerError.data.message || "Signup Failed");
+            toast.error(registerError?.data.message || "Signup Failed");
         }
         if (loginIsSuccess && loginData) {
             toast.success(loginData.message || "Login successful.");

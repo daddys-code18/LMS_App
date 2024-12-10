@@ -1,7 +1,7 @@
 import { User } from "../models/user.models.js";
 import bcrypt from "bcryptjs";
 import { generateToken } from "../utlis/generateToken.js";
-import { uploadMedia } from "./../utlis/cloudinary.js";
+import { deleteMediaFromCloudinary, uploadMedia } from "./../utlis/cloudinary.js";
 
 export const register = async (req, res) => {
   try {
@@ -96,7 +96,7 @@ export const getUserProfile = async (req, res) => {
     const userId = req.id;
     const user = await User.findById(userId)
       .select("-password")
-      .populate("enrollCourse");
+      // .populate("enrollCourse");
 
     if (!user) {
       return res.status(404).json({

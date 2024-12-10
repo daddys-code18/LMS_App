@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { userLoggedIn, userLoggedOut } from "../authSlice";
+
 const USER_API = "http://localhost:4000/api/v1/user/";
 
 export const authApi = createApi({
@@ -27,7 +28,7 @@ export const authApi = createApi({
           const result = await queryFulfilled;
           dispatch(userLoggedIn({ user: result.data.user }));
         } catch (error) {
-          console.error(error);
+          console.log(error);
         }
       },
     }),
@@ -68,7 +69,6 @@ export const authApi = createApi({
     }),
   }),
 });
-
 export const {
   useRegisterUserMutation,
   useLoginUserMutation,
