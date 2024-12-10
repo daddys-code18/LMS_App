@@ -3,6 +3,7 @@ import './App.css'
 import Login from './pages/Login'
 import MainLayout from './layout/MainLayout'
 import HeroSection from './pages/student/HeroSection'
+import Courses from './pages/student/Courses'
 
 const appRouter = createBrowserRouter([
   {
@@ -11,7 +12,10 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <HeroSection />
+        element: (<>
+          <HeroSection />
+          <Courses />
+        </>)
       },
       {
         path: "login",
