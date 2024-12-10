@@ -4,6 +4,7 @@ import Login from './pages/Login'
 import MainLayout from './layout/MainLayout'
 import HeroSection from './pages/student/HeroSection'
 import Courses from './pages/student/Courses'
+import MyLearning from './pages/student/MyLearning'
 
 const appRouter = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const appRouter = createBrowserRouter([
       {
         path: "login",
         element: <Login />
+      },
+      {
+        path: "my-learning",
+        element: <MyLearning />
       }
     ]
   }

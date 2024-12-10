@@ -25,7 +25,7 @@ import { Separator } from '@radix-ui/react-dropdown-menu';
 
 const Navbar = () => {
     const navigate = useNavigate();
-    const user = false
+    const user = true
     const logoutHandler = () => { }
     return (
         <div className="h-16 dark:bg:[#020817] bg-white border-b  dark:border-b-gray-800 border-b-gray-200 fixed top-0 left-0 right-0 duration-300 z-10">
