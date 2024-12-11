@@ -10,8 +10,8 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table";
-// // import { useGetCreatorCourseQuery } from "@/features/api/courseApi";
-// import { Edit } from "lucide-react";
+import { useGetCreatorCourseQuery } from "@/features/api/courseApi";
+import { Edit } from "lucide-react";
 // import React from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -61,11 +61,10 @@ const invoices = [
 ];
 
 const CourseTable = () => {
-    // const { data, isLoading } = useGetCreatorCourseQuery();
+    const { data, isLoading } = useGetCreatorCourseQuery();
     const navigate = useNavigate();
-    const isLoading = false
     if (isLoading) return <h1>Loading...</h1>
-
+    console.log(data)
     return (
         <div>
             <Button onClick={() => navigate(`create`)}>Create a new course</Button>
@@ -79,8 +78,8 @@ const CourseTable = () => {
                         <TableHead className="text-right">Action</TableHead>
                     </TableRow>
                 </TableHeader>
-                {/* <TableBody>
-                    {invoices.courses.map((course) => (
+                <TableBody>
+                    {data.courses.map((course) => (
                         <TableRow key={course._id}>
                             <TableCell className="font-medium">{course?.coursePrice || "NA"}</TableCell>
                             <TableCell> <Badge>{course.isPublished ? "Published" : "Draft"}</Badge> </TableCell>
@@ -90,7 +89,7 @@ const CourseTable = () => {
                             </TableCell>
                         </TableRow>
                     ))}
-                </TableBody> */}
+                </TableBody>
             </Table>
         </div>
     );

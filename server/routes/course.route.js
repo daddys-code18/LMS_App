@@ -7,7 +7,7 @@ import {
   //   editLecture,
   //   getCourseById,
   //   getCourseLecture,
-  //   getCreatorCourses,
+  getCreatorCourses,
   //   getLectureById,
   //   getPublishedCourse,
   //   removeLecture,
@@ -17,4 +17,5 @@ import {
 const router = express.Router();
 
 router.route("/").post(isAuthenticated, createCourse);
+router.route("/").get(isAuthenticated, getCreatorCourses);
 export default router;
