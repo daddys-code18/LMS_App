@@ -44,6 +44,7 @@ const CourseTab = () => {
     const courseId = params.courseId;
     const { data: courseByIdData, isLoading: courseByIdLoading, refetch } =
         useGetCourseByIdQuery(courseId);
+    console.log(courseByIdData)
 
     const [publishCourse, { }] = usePublishCourseMutation();
 
