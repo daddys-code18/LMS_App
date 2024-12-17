@@ -15,9 +15,7 @@ router
 router
   .route("/webhook")
   .post(express.raw({ type: "application/json" }), stripeWebhook);
-router
-  .route("/course/:courseId/detail-with-status")
-  .get(isAuthenticated, getCourseDetailWithPurchaseStatus);
+router.route("/course/:courseId/detail-with-status").get(isAuthenticated, getCourseDetailWithPurchaseStatus);
 
 router.route("/").get(isAuthenticated, getAllPurchasedCourse);
 

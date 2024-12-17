@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import { Button } from "./ui/button";
-import { useCreateCheckoutSessionMutation } from "@/features/api/purchaseApi";
+import { useCreateCheckoutSessionMutation } from "../features/api/purchaseApi";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 
 const BuyCourseButton = ({ courseId }) => {
     const [createCheckoutSession, { data, isLoading, isSuccess, isError, error }] =
         useCreateCheckoutSessionMutation();
+    console.log(data)
 
     const purchaseCourseHandler = async () => {
         await createCheckoutSession(courseId);
